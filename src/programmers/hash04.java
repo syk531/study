@@ -49,23 +49,21 @@ public class hash04 {
 		ArrayList<Integer> answerList = new ArrayList<>();
 		
 		for(int i=0; i<musicArr.length; i++) {
-			for(int j=0; j<musicArr[i].play.size(); j++) {
-				//젇렬
-				List<Entry<Integer, Integer>> playList = new ArrayList<Entry<Integer, Integer>>(musicArr[i].play.entrySet());
+			//젇렬
+			List<Entry<Integer, Integer>> playList = new ArrayList<Entry<Integer, Integer>>(musicArr[i].play.entrySet());
+			//[1=600, 4=2500]
+			Collections.sort(playList, new Comparator<Entry<Integer, Integer>>() {
+				@Override
+				public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2) {
+					return o2.getValue().compareTo(o1.getValue());
+				}
+			});
+			
+			for(int j=0; j<playList.size(); j++) {
+				answerList.add(playList.get(j).getKey());
 				
-				Collections.sort(playList, new Comparator<Entry<Integer, Integer>>() {
-					@Override
-					public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2) {
-						return o1.getValue().compareTo(o2.getValue());
-					}
-				});
-				
-				for(int k=0; k<playList.size(); k++) {
-					answerList.add(playList.get(k).getKey());
-					
-					if(k==1) {
-						break;
-					}
+				if(j==1) {
+					break;
 				}
 			}
 		}
