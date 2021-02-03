@@ -23,6 +23,7 @@ public class exhaustiveSearch02 {
 		int digit = 1; //자리수
 		int number = 0;
 		
+		//조합가능 숫자 만들기
 		while(digit == numbers.length()) {
 			for(int i=0; i<numbers.length(); i++) {
 				number = Integer.parseInt(numbers.substring(i, i+1));
@@ -38,7 +39,11 @@ public class exhaustiveSearch02 {
 					list = map.get(digit-1);
 				}
 			}
+			
+			digit++;
 		}
+		
+		//조합가능 숫자 중에서 소수 구하기
 		
         int answer = 0;
         return answer;
