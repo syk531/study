@@ -22,7 +22,6 @@ public class order01 {
 			answer[i] = splitedArray[command[2]-1];
 		}
 		
-		
         return answer;
     }
 }
