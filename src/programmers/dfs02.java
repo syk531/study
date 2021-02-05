@@ -16,7 +16,7 @@ public class dfs02 {
 		
 		for(int i=0; i<computers.length; i++) {
 			for(int j=0; j<computers[i].length; j++) {
-				if(computers[i][j] != 1) {
+				if(computers[i][j] != 1 || i==j) {
 					continue;
 				}
 				
