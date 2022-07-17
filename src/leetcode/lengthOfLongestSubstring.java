@@ -13,7 +13,6 @@ public class lengthOfLongestSubstring {
 		HashMap<String, String> map = new HashMap<String, String>();
 		int maxLength = 0;
 		int length = 0;
-        
         for(int i=0; i<s.length(); i++) {
         	length = 0;
         	map.clear();

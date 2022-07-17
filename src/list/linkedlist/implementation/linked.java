@@ -1,6 +1,6 @@
 package list.linkedlist.implementation;
 
-public class Main {
+public class linked {
 	public static void main(String[] args) {
 		LinkedList numbers = new LinkedList();
 		numbers.addLast(5);
