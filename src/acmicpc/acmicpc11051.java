@@ -17,16 +17,19 @@ public class acmicpc11051 {
 			int n = intArr[0];
 			int k = intArr[1];
 			
-			int remain = 1;
-			if(k == 0) {
-				remain = 0;
+			int[][] dp = new int[n+1][n+1];
+			
+			for(int i=1; i<=n; i++) {
+				for(int j=0; j<=n; j++) {
+					if(i == j || j == 0) {
+						dp[i][j] = 1;
+					} else {
+						dp[i][j] = (dp[i-1][j-1] + dp[i-1][j]) % 10007; 
+					}
+				}
 			}
 			
-			for(int i=1; i<=k; i++) {
-				remain = remain * (n-i+1) / i % 10007;  
-			}
-			
-			writer.append(String.valueOf(remain)); 
+			writer.append(String.valueOf(dp[n][k])); 
 			
 			writer.flush();
 			writer.close();
