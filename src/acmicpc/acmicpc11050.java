@@ -18,7 +18,7 @@ public class acmicpc11050 {
 			int k = intArr[1];
 			
 			int a = 1;
-			int b = 1;
+			int b = 1; 
 
 			for(int i=1; i<=k; i++) {
 				a = a*(n-i+1);
