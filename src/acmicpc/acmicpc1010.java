@@ -16,7 +16,7 @@ public class acmicpc1010 {
 			
 			int[][] dp = new int[30][30];
 			
-			for(int i=1; i<=29; i++) {
+			for(int i=1; i<=29; i++) { 
 				for(int j=0; j<=29; j++) {
 					if(i == j || j == 0) {
 						dp[i][j] = 1;
