@@ -15,7 +15,6 @@ public class acmicpc2566 {
 			int answerN=1;
 			int answerM=1;
 			int n=1;
-			int m=1;
 			int max = Integer.MIN_VALUE;
 			
 			while(true) {
@@ -36,7 +35,8 @@ public class acmicpc2566 {
 				n++;
 			}
 			
-			writer.append(String.valueOf(b))
+			writer.append(String.valueOf(max) + "\n");
+			writer.append(String.valueOf(answerN) + " " + String.valueOf(answerM));
 			writer.flush();
 			writer.close();
 		} catch (Exception e) {
