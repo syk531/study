@@ -14,25 +14,19 @@ public class acmicpc2566 {
 			
 			int answerN=1;
 			int answerM=1;
-			int n=1;
 			int max = Integer.MIN_VALUE;
 			
-			while(true) {
+			for(int i=1; i<=9; i++) {
 				String str = reader.readLine();
-				if(null == str) {
-					break;
-				}
 				
 				int[] intArr = Arrays.stream(str.split(" ")).mapToInt(Integer::parseInt).toArray();
-				for(int i=0; i<intArr.length; i++) {
-					if(max < intArr[i]) {
-						max = intArr[i];
-						answerN = n;
-						answerM = i+1;
+				for(int j=0; j<intArr.length; j++) {
+					if(max < intArr[j]) {
+						max = intArr[j];
+						answerN = i;
+						answerM = j+1;
 					}
 				}
-				
-				n++;
 			}
 			
 			writer.append(String.valueOf(max) + "\n");
