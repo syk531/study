@@ -4,26 +4,26 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class acmicpc1920 {
     public static void main(String args[]) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
              BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out))) {
 
-            boolean[] chk = new boolean[100000];
+            Set<Integer> set = new TreeSet<>();
             int n = Integer.parseInt(reader.readLine());
             String[] nStrArr = reader.readLine().split(" ");
 
             for(int i=0; i<n; i++) {
-                chk[Integer.parseInt(nStrArr[i])] = true;
+                set.add(Integer.parseInt(nStrArr[i]));
             }
 
             int m = Integer.parseInt(reader.readLine());
             String[] mStrArr = reader.readLine().split(" ");
-            int num = 0;
             for(int i=0; i<m; i++) {
-                num = chk[Integer.parseInt(mStrArr[i])] ? 1 : 0;
-                writer.append(String.valueOf(num) + "\n");
+                writer.append(String.valueOf(set.contains(Integer.parseInt(mStrArr[i])) ? 1 : 0) + "\n");
             }
 
             writer.flush();
